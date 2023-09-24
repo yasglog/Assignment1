@@ -6,15 +6,13 @@ import clock from "../Assest/Clock.jpg";
 
 const Timestamp = () => {
   const { accountType, setAccountType } = useContext(MyContext);
-  const { workTimer, setWorkTimer } = useContext(MyContext);
-
-  const { takShortBreak, setTakShortBreak } = useContext(MyContext);
+  const { takeShortBreak, setTakeShortBreak } = useContext(MyContext);
 
   return (
     <div className=" w-[30%] mx-auto flex flex-col relative items-center justify-center min-h-[600px] ">
       <div className=" w-full mx-auto  border-2 flex flex-col items-center shadow-lg min-h-[380px] justify-center rounded-xl ">
         {
-          !takShortBreak?(<h2 className=" text-[#7785dc]">You cannot take a short break when mean task running</h2>):(<h2 className=" text-[#7785dc]">Short break start</h2>)
+          !takeShortBreak?(<h2 className=" text-[#7785dc]">You cannot take a short break when mean task running</h2>):(<h2 className=" text-[#7785dc]">Short break start</h2>)
         }
         <div className="flex bg-[#7b89e5] p-1 gap-x-1 my-6  w-[80%] justify-around rounded-md  ">
           <button
@@ -23,7 +21,7 @@ const Timestamp = () => {
                 ? "bg-[#6674CC] text-white"
                 : "  text-white"
             } py-2 px-5 rounded-md transition-all duration-200`}
-            onClick={() => (!takShortBreak?setAccountType("Workbreak"):"")}
+            onClick={() => (!takeShortBreak?setAccountType("Workbreak"):"")}
           >
             WorkClock
           </button>
@@ -34,7 +32,7 @@ const Timestamp = () => {
                 ? "bg-[#6674CC] text-white"
                 : " text-white"
             } py-2 px-5 rounded-md transition-all duration-200`}
-            onClick={() => (takShortBreak ? setAccountType("Shortbreak") : "")}
+            onClick={() => (takeShortBreak ? setAccountType("Shortbreak") : "")}
           >
             ShortBreak
           </button>
@@ -45,7 +43,7 @@ const Timestamp = () => {
             <div className=" w-full">
               <Worktimer></Worktimer>
             </div>
-          ) : takShortBreak ? (
+          ) : takeShortBreak ? (
             <div className=" w-full">
               <Shortbreak></Shortbreak>
             </div>

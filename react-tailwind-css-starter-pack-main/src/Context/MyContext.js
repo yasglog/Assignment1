@@ -7,10 +7,10 @@ function AppContextProvider({children}){
     const[workTimerStatus,setWorkTimerStatus] =useState(false);
 
     const [accountType, setAccountType] = useState("Workbreak"); 
-    const [workTimer,setWorkTimer]=useState(10);
+    const [workTimer,setWorkTimer]=useState(1500);
     const [shortBreakTimer,setShortBreakTimer]=useState(300);
     const[shortBreakTimerStatus,setShortBreakTimerStatus] =useState(false);
-    const[takShortBreak,setTakShortBreak] =useState(false);
+    const[takeShortBreak,setTakeShortBreak] =useState(false);
 
     const value={
       workTimerStatus,
@@ -23,8 +23,8 @@ function AppContextProvider({children}){
       setShortBreakTimer,
       shortBreakTimerStatus,
       setShortBreakTimerStatus,
-      takShortBreak,
-      setTakShortBreak    
+      takeShortBreak,
+      setTakeShortBreak    
     };
 
     return <MyContext.Provider value={value}>

@@ -11,7 +11,7 @@ const Worktimer = () => {
 
   const { accountType, setAccountType } = useContext(MyContext);
 
-  const{takShortBreak,setTakShortBreak}=useContext(MyContext);
+  const{takeShortBreak,setTakeShortBreak}=useContext(MyContext);
 
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Worktimer = () => {
     else{
       // setTakShortBreak(true);
       if(workTimer===0){
-        setTakShortBreak(true);
+        setTakeShortBreak(true);
         setAccountType("Shortbreak")
         setWorkTimer(1500);
         setWorkTimerStatus(false)
@@ -55,7 +55,7 @@ const Worktimer = () => {
     setWorkTimerStatus(false);
     setWorkTimer(1500);
     toast.success("Reset Successfully");
-    setTakShortBreak(false)
+    setTakeShortBreak(false)
     console.log(workTimer);
   }
 
