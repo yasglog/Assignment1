@@ -14,6 +14,9 @@ const Shortbreak = () => {
       }, 1000);
       return () => clearInterval(interval);
     }
+    else{
+      
+    }
   }, [shortBreakTimer, shortBreakTimerStatus]);
 
   const GetTime = (shortBreakTimer) => {
@@ -31,7 +34,7 @@ const Shortbreak = () => {
   function Stoptimer() {
     setShortBreakTimerStatus(false);
     console.log("time stop ,", shortBreakTimerStatus);
-    toast.success("Stop Successfully");
+    toast.success("Pause Successfully");
   }
 
   function Restarttimer() {
@@ -52,7 +55,7 @@ const Shortbreak = () => {
           onClick={Stoptimer}
         >
           
-          Stop
+          Pause
         </button>):(<button
           className=" cursor-pointer bg-[#6674CC] text-white py-2 w-20 rounded-md text-center "
           onClick={Starttimer}
@@ -61,12 +64,7 @@ const Shortbreak = () => {
         </button>)
       }
        
-        {/* <button
-          className=" cursor-pointer bg-[#6674CC] text-white py-2 w-20  rounded-md text-center "
-          onClick={setAccountType("student")}
-        >
-          Restart
-        </button> */}
+        
         <button
           className=" cursor-pointer bg-[#6674CC] text-white py-2 w-20  rounded-md text-center "
           onClick={Restarttimer}

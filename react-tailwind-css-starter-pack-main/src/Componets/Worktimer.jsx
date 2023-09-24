@@ -7,7 +7,10 @@ const Worktimer = () => {
   // const [time,setTime]=useState(1500);
   const { workTimer, setWorkTimer } = useContext(MyContext);
   const { workTimerStatus, setWorkTimerStatus } = useContext(MyContext);
-  // const{takShortBreak,setTakShortBreak}=useContext(MyContext);
+  const { shortBreakTimerStatus, setShortBreakTimerStatus } =useContext(MyContext);
+
+  const { accountType, setAccountType } = useContext(MyContext);
+
   const{takShortBreak,setTakShortBreak}=useContext(MyContext);
 
 
@@ -23,6 +26,10 @@ const Worktimer = () => {
       // setTakShortBreak(true);
       if(workTimer===0){
         setTakShortBreak(true);
+        setAccountType("Shortbreak")
+        setWorkTimer(1500);
+        setWorkTimerStatus(false)
+        setShortBreakTimerStatus(true)
       }
     }
   }, [workTimer, workTimerStatus]);
@@ -41,9 +48,7 @@ const Worktimer = () => {
   function Stoptimer() {
     setWorkTimerStatus(false);
     console.log("time stop ,", workTimerStatus);
-    toast.success("Stop Successfully");
-
-    // setNumber(workTimer)
+    toast.success("Pause Successfully");
   }
 
   function Restarttimer() {

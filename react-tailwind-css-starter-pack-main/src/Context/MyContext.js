@@ -6,7 +6,7 @@ export const MyContext = createContext("");
 function AppContextProvider({children}){
     const[workTimerStatus,setWorkTimerStatus] =useState(false);
 
-    const [accountType, setAccountType] = useState("student"); 
+    const [accountType, setAccountType] = useState("Workbreak"); 
     const [workTimer,setWorkTimer]=useState(10);
     const [shortBreakTimer,setShortBreakTimer]=useState(300);
     const[shortBreakTimerStatus,setShortBreakTimerStatus] =useState(false);
